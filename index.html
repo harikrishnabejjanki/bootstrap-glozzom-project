@@ -169,6 +169,125 @@
     </div>
   </section>
 
+  <!-- VIDEO PLAY -->
+
+  <section id="video-play">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container p-5">
+            <a href="" class="video" data-video="//www.youtube.com/embed/YE7VzlLtp-4" data-toggle="modal"
+              data-target="#videoModal">
+              <i class="fas fa-play fa-3x"></i></a>
+            <h1>See what we do</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PHOTO GALLERY -->
+
+  <section id="gallery" class="py-5">
+
+    <div class="container">
+      <h1 class="text-center">
+        Photo Gallery
+      </h1>
+      <p class="text-center">Check out our photos</p>
+      <div class="row mb-4 text-center">
+        <div class="col-md-4">
+          <a href="https://source.unspalsh.com/random/560*560" data-toggle="lightbox" data-gallery="img-gallery"
+            data-height="560" data-width="560">
+            <img src="img/person1.jpg" alt="" class="img-fluid"></a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="https://source.unspalsh.com/random/561*561" data-toggle="lightbox" data-gallery="img-gallery"
+            data-height="561" data-width="561">
+            <img src="img/person4.jpg" alt="" class="img-fluid"></a>
+        </div>
+        <div class="col-md-4">
+          <a href="https://source.unspalsh.com/random/562*562" data-toggle="lightbox" data-gallery="img-gallery"
+            data-height="562" data-width="562">
+            <img src="img/person1.jpg" alt="" class="img-fluid"></a>
+        </div>
+
+      </div>
+
+      <div class="row mb-4 text-center">
+        <div class="col-md-4">
+          <a href="https://source.unspalsh.com/random/563*563" data-toggle="lightbox" data-gallery="img-gallery"
+            data-height="563" data-width="563">
+            <img src="img/person3.jpg" alt="" class="img-fluid"></a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="https://source.unspalsh.com/random/564*564" data-toggle="lightbox" data-gallery="img-gallery"
+            data-height="564" data-width="564">
+            <img src="img/person2.jpg" alt="" class="img-fluid"></a>
+        </div>
+        <div class="col-md-4">
+          <a href="https://source.unspalsh.com/random/565*565" data-toggle="lightbox" data-gallery="img-gallery"
+            data-height="565" data-width="565">
+            <img src="img/person4.jpg" alt="" class="img-fluid"></a>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- NEWS LETTERS -->
+
+  <section id="newsletter" class="text-center p-5 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Sign Up for news letter</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis quam repellat sequi neque amet ea, quia ipsa quo corrupti ad tenetur a ut alias iste rem porro aliquid! Dolor, voluptatibus!</p>
+          <form action="" class="form-inline justify-content-center">
+              <input type="text" class="form-control mb-2 mr-2" placeholder="Enter name">
+              <input type="text" class="form-control mb-2 mr-2" placeholder="Enter Email">
+              <a href="" class="btn btn-primary mb-2">SUBMIT</a>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer id="main-footer" class="text-center p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Copryright &copy; <span id="year"></span>GLOZZOM</p>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- VIDEO MODAL -->
+
+  <div class="modal fade" id="videoModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+          <iframe src="" frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"
@@ -186,6 +305,21 @@
       interval: 5000,
       pause: 'hover'
     })
+
+
+    // Video Play
+    $(function () {
+      // Auto play modal video
+      $(".video").click(function () {
+        var theModal = $(this).data("target"),
+          videoSRC = $(this).attr("data-video"),
+          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
+        });
+      });
+    });
   </script>
 
 </body>
